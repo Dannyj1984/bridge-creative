@@ -9,7 +9,7 @@ export default function About() {
             impactful visual solutions. With over 5 years of experience in brand
             identity, digital design, and print media, I focus on crafting
             designs that not only look beautiful but also effectively communicate
-            my clients' messages.
+            my clients`&apos;` messages.
           </p>
           <p className="text-gray-600 leading-relaxed mt-4">
             My approach combines clean aesthetics with strategic thinking,
