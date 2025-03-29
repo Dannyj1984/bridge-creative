@@ -1,3 +1,7 @@
+'use client';
+
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-12">
@@ -10,9 +14,10 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <nav className="space-y-2">
-              <a href="/" className="block text-gray-400 hover:text-white">Home</a>
-              <a href="/about" className="block text-gray-400 hover:text-white">About</a>
-              <a href="/work" className="block text-gray-400 hover:text-white">Work</a>
+              <Link href="/" className="block text-gray-400 hover:text-white">Home</Link>
+              <Link href="/about" className="block text-gray-400 hover:text-white">About</Link>
+              <Link href="/services" className="block text-gray-400 hover:text-white">Services</Link>
+              <Link href="/work" className="block text-gray-400 hover:text-white">Work</Link>
             </nav>
           </div>
           <div>

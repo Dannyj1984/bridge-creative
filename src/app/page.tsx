@@ -1,4 +1,5 @@
-import Image from "next/image";
+'use client';
+
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Footer from './components/Footer';

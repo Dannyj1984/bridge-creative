@@ -1,42 +1,41 @@
-import Image from 'next/image';
+'use client';
+
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const projects = [
   {
     id: 1,
     title: 'Brand Identity',
     description: 'Modern branding for tech startup',
-    image: '/work/project1.jpg',
+    image: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=2894&auto=format&fit=crop',
+    credit: 'Unsplash @kellysikkema'
   },
   {
     id: 2,
     title: 'Digital Design',
     description: 'E-commerce website redesign',
-    image: '/work/project2.jpg',
+    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2864&auto=format&fit=crop',
+    credit: 'Unsplash @youxventures'
   },
   {
     id: 3,
     title: 'Print Design',
     description: 'Magazine layout and typography',
-    image: '/work/project3.jpg',
+    image: 'https://images.unsplash.com/photo-1574351406668-7585cd5b080c?q=80&w=2940&auto=format&fit=crop',
+    credit: 'Unsplash @joshsorenson'
   },
 ];
 
-const itemVariants = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  hover: { y: -5, transition: { duration: 0.2 } }
-};
-
 export default function WorkCarousel() {
   return (
-    <section id="work" className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
         <motion.h2 
-          className="text-3xl font-bold mb-12 text-center"
-          initial={{ opacity: 0, y: -20 }}
+          className="text-3xl font-semibold mb-12 text-center"
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
+          transition={{ duration: 0.5 }}
         >
           Featured Work
         </motion.h2>
@@ -44,25 +43,23 @@ export default function WorkCarousel() {
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
-              variants={itemVariants}
-              initial="initial"
-              whileInView="animate"
-              whileHover="hover"
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              className="group relative overflow-hidden rounded-lg shadow-lg bg-white"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="relative h-64">
+              <div className="relative h-64 w-full">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-600">{project.description}</p>
+                <p className="text-gray-600 mb-2">{project.description}</p>
+                <p className="text-sm text-gray-400">{project.credit}</p>
               </div>
             </motion.div>
           ))}
