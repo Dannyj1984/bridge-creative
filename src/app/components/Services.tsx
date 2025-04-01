@@ -28,7 +28,14 @@ export default function Services() {
         <h2 className="text-3xl font-bold mb-12 text-center">Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="p-6 bg-gray-50 rounded-lg hover:shadow-md transition-shadow">
+            <div 
+              key={index} 
+              className={`p-6 bg-gradient-to-b from-white to-gray-50 rounded-lg shadow-sm hover:shadow-2xl hover:cursor-pointer hover:scale-130 hover:z-10 transition-all duration-300 border border-gray-100 relative
+                ${index % 4 === 0 ? 'hover:translate-x-[25%]' : ''}
+                ${index % 4 === 3 ? 'hover:translate-x-[-25%]' : ''}
+                ${index % 4 === 1 ? 'hover:translate-x-[12%]' : ''}
+                ${index % 4 === 2 ? 'hover:translate-x-[-12%]' : ''}`}
+            >
               <div className="text-4xl mb-4">{service.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
               <p className="text-gray-600">{service.description}</p>
