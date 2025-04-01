@@ -48,10 +48,24 @@ export default function Navigation() {
               onClick={toggleMenu}
               aria-label="Toggle menu"
             >
-              <div className="w-6 h-5 relative flex flex-col justify-between">
-                <span className={`w-full h-0.5 bg-black transition-transform ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-                <span className={`w-full h-0.5 bg-black transition-opacity ${isMenuOpen ? 'opacity-0' : ''}`} />
-                <span className={`w-full h-0.5 bg-black transition-transform ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+              <div className="w-6 h-5 relative">
+                {isMenuOpen ? (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Image 
+                      src="/close-icon.png" 
+                      alt="Close menu" 
+                      width={24} 
+                      height={24}
+                      className="opacity-100 transition-opacity duration-200"
+                    />
+                  </div>
+                ) : (
+                  <div className="flex flex-col justify-between h-full">
+                    <span className="w-full h-0.5 bg-black transition-transform" />
+                    <span className="w-full h-0.5 bg-black transition-opacity" />
+                    <span className="w-full h-0.5 bg-black transition-transform" />
+                  </div>
+                )}
               </div>
             </button>
           </div>
