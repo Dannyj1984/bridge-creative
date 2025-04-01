@@ -4,9 +4,11 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const route = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -22,11 +24,11 @@ export default function Navigation() {
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-600 hover:text-black">Home</Link>
-            <Link href="/about" className="text-gray-600 hover:text-black">About</Link>
-            <Link href="/services" className="text-gray-600 hover:text-black">Services</Link>
-            <Link href="/work" className="text-gray-600 hover:text-black">Work</Link>
-            <Link href="/contact" className="text-gray-600 hover:text-black">Contact</Link>
+            <Link href="/" className={`text-gray-600 hover:text-red-500 ${route === '/' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>Home</Link>
+            <Link href="/about" className={`text-gray-600 hover:text-red-500 ${route === '/about' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>About</Link>
+            <Link href="/services" className={`text-gray-600 hover:text-red-500 ${route === '/services' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>Services</Link>
+            <Link href="/work" className={`text-gray-600 hover:text-red-500 ${route === '/work' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>Work</Link>
+            <Link href="/contact" className={`text-gray-600 hover:text-red-500 ${route === '/contact' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>Contact</Link>
             <Link 
               href="tel:+1234567890" 
               className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors"
