@@ -5,17 +5,13 @@ export default function About() {
         <h2 className="text-3xl font-bold mb-8 text-center">About Me</h2>
         <div className="prose prose-lg mx-auto">
           <p className="text-gray-600 leading-relaxed">
-            We are Bridge Creative, a graphic design company with a passion for creating
-            impactful visual solutions. With over 5 years of experience in brand
-            identity, digital design, and print media, I focus on crafting
-            designs that not only look beautiful but also effectively communicate
-            my clients`&apos;` messages.
+          Hey there! We are The Bridge Creative - a small but mighty graphic design company based in Stalybridge, Greater Manchester. We’re all about helping businesses bring their ideas to life through bold visuals, smart branding and innovative design that connects with people.
           </p>
           <p className="text-gray-600 leading-relaxed mt-4">
-            My approach combines clean aesthetics with strategic thinking,
-            ensuring that each project delivers both visual appeal and
-            meaningful results. I believe in the power of thoughtful design
-            to transform ideas into memorable brand experiences.
+          From logos, flyers and posters to full-on brand identities, we love working with passionate people to create work that looks great and gets results. We believe that good design should build bridges (see what we did there!?) between you and your audience to ensure the best for you and your company.
+          </p>
+          <p className="text-gray-600 leading-relaxed mt-4">
+          Whether you’ve got a clear vision or just a rough sketch on a napkin, we’re here to make it happen.
           </p>
         </div>
       </div>
