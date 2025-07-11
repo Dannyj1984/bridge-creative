@@ -26,7 +26,7 @@ export default function Services() {
     <section id="services" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-center">Services</h2>
-        <h3 className="text-lg font-semibold mb-8 text-center">At The Bridge Creative, we offer a range of design services to help your brand stand out and speak clearly—whether you're starting fresh or giving things a much-needed refresh. Here's what we do best:</h3>
+        <h3 className="text-lg font-semibold mb-8 text-center">At The Bridge Creative, we offer a range of design services to help your brand stand out and speak clearly—whether you&apos;re starting fresh or giving things a much-needed refresh. Here&apos;s what we do best:</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <div 
@@ -43,7 +43,7 @@ export default function Services() {
             </div>
           ))}
         </div>
-        <h3 className="text-lg font-semibold mb-8 text-center mt-6">No matter the project, we’re here to bring your ideas to life with creativity, care, and a bit of northern charm.</h3>
+        <h3 className="text-lg font-semibold mb-8 text-center mt-6">No matter the project, we&apos;re here to bring your ideas to life with creativity, care, and a bit of northern charm.</h3>
       </div>
     </section>
   );
