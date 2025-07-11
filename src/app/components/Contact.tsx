@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
+import Loading from '../work/[id]/loading';
 
 declare global {
   interface Window {
@@ -12,6 +13,7 @@ declare global {
 }
 
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({
     acceptContact: '',
     name: '',
@@ -50,10 +52,12 @@ export default function Contact() {
       return;
     }
     try {
+      setIsSubmitting(true);
       // Execute reCAPTCHA
       const token = await new Promise<string>((resolve, reject) => {
         if (typeof window === 'undefined' || !window.grecaptcha) {
           reject(new Error('reCAPTCHA not loaded'));
+          setIsSubmitting(false);
           return;
         }
 
@@ -84,6 +88,7 @@ export default function Contact() {
     const responseData = await response.json();
 
     if (!response.ok) {
+      setIsSubmitting(false);
       if (response.status === 429) {
         throw new Error(responseData.message || 'Too many requests. Please try again later.');
       }
@@ -95,11 +100,12 @@ export default function Contact() {
     }
     } catch (error) {
       console.error('Error sending message:', error);
-      toast.error('Failed to send message', { duration: 5000, position: 'top-right' });
+      toast.error('Failed to send message', { duration: 5000, position: 'top-center' });
     }
     // Reset form
     setFormData({ name: '', email: '', phone: '', message: '', acceptContact: false });
-    toast.success('Message sent successfully!', { duration: 5000, position: 'top-right' });
+    toast.success('Message sent successfully!', { duration: 5000, position: 'top-center' });
+    setIsSubmitting(false);
   }
   
   const getErrorsMessage = (name: string) => {
@@ -138,7 +144,8 @@ export default function Contact() {
     <section id="contact" className="py-20 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-center">Get in Touch</h2>
-        <form onSubmit={handleSubmit} className="space-y-6">
+        {isSubmitting && <Loading />}
+        {!isSubmitting && <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
               Name
@@ -216,7 +223,7 @@ export default function Contact() {
           >
             Send Message
           </button>
-        </form>
+        </form>}
       </div>
     </section>
   );
