@@ -24,11 +24,11 @@ export default function Navigation() {
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className={`text-gray-600 hover:text-red-500 ${route === '/' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>Home</Link>
-            <Link href="/about" className={`text-gray-600 hover:text-red-500 ${route === '/about' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>About</Link>
-            <Link href="/services" className={`text-gray-600 hover:text-red-500 ${route === '/services' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>Services</Link>
-            <Link href="/work" className={`text-gray-600 hover:text-red-500 ${route === '/work' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>Work</Link>
-            <Link href="/contact" className={`text-gray-600 hover:text-red-500 ${route === '/contact' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>Contact</Link>
+            <Link href="/" prefetch={true} className={`text-gray-600 hover:text-red-500 ${route === '/' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>Home</Link>
+            <Link href="/about" prefetch={true} className={`text-gray-600 hover:text-red-500 ${route === '/about' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>About</Link>
+            <Link href="/services" prefetch={true} className={`text-gray-600 hover:text-red-500 ${route === '/services' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>Services</Link>
+            <Link href="/work" prefetch={true} className={`text-gray-600 hover:text-red-500 ${route === '/work' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>Work</Link>
+            <Link href="/contact" prefetch={true} className={`text-gray-600 hover:text-red-500 ${route === '/contact' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>Contact</Link>
             <Link 
               href="tel:+7597040947" 
               className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors"

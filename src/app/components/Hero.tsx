@@ -32,18 +32,32 @@ export default function Hero() {
         >
           Crafting meaningful brand experiences through thoughtful design
         </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-        >
-          <Link
-            href="/work"
-            className="inline-block bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors"
+        <div className="flex flex-col md:flex-row justify-center gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
           >
-            View Our Work
-          </Link>
-        </motion.div>
+            <Link
+              href="/work"
+              className="inline-block bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              View Our Work
+            </Link>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+          >
+            <Link
+              href="/services"
+              className="inline-block bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              Services
+            </Link>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
