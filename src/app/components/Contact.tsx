@@ -202,24 +202,59 @@ export default function Contact() {
             />
             {errors.message && <p className="text-red-500 mt-1">{errors.message}</p>}
           </div>
-          <div className="flex items-center">
-            <input
-              type="checkbox"
-              id="acceptContact"
-              name="acceptContact"
-              checked={formData.acceptContact}
-              onChange={handleChange}
-              className="mr-2"
-            />
-            <label htmlFor="acceptContact" className="text-sm text-gray-700">
-              I accept to be contacted
+          <div className="flex items-start gap-2">
+            <div 
+              className="relative flex items-center justify-center w-5 h-5 mt-0.5 cursor-pointer group"
+              onClick={() => {
+                setFormData(prev => ({
+                  ...prev,
+                  acceptContact: !prev.acceptContact
+                }));
+                if (errors.acceptContact) {
+                  setErrors(prev => ({ ...prev, acceptContact: '' }));
+                }
+              }}
+            >
+              <input
+                type="checkbox"
+                id="acceptContact"
+                name="acceptContact"
+                checked={formData.acceptContact}
+                onChange={() => {}}
+                className="sr-only"
+              />
+              <div className={`
+                absolute inset-0 border-2 rounded transition-all duration-200
+                ${formData.acceptContact ? 'border-red-500 bg-red-500' : 'border-gray-300 bg-white'}
+                group-hover:border-red-400
+              `}>
+                <svg
+                  className={`
+                    w-full h-full stroke-white transition-all duration-200
+                    ${formData.acceptContact ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}
+                  `}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+            </div>
+            <label 
+              htmlFor="acceptContact" 
+              className="text-sm text-gray-700 cursor-pointer select-none"
+            >
+              I consent to Bridge Creative contacting me regarding my enquiry
             </label>
           </div>
           {errors.acceptContact && <p className="text-red-500 mt-1">{errors.acceptContact}</p>}
 
           <button
             type="submit"
-            className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition-colors"
+            className="cursor-pointer w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition-colors"
           >
             Send Message
           </button>
