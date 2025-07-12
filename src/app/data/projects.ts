@@ -3,9 +3,9 @@ export interface Project {
     title: string;
     description: string;
     image: string;
-    credit?: string;
     fullDescription?: string;
     additionalImages?: string[];
+    featured: boolean;
   }
   
   export const projects: Project[] = [
@@ -15,7 +15,8 @@ export interface Project {
       description: 'Modern branding for sports clothing',
       image: '/work/dod.png',
       fullDescription: 'A comprehensive branding project for a modern sports clothing line. We developed a complete visual identity that resonates with active lifestyle enthusiasts.',
-      additionalImages: []
+      additionalImages: [],
+      featured: true,
     },
     {
       id: 2,
@@ -23,6 +24,43 @@ export interface Project {
       description: 'Private healthcare branding',
       image: '/work/shc.png',
       fullDescription: 'A sophisticated branding solution for a private healthcare provider, focusing on trust, professionalism, and care.',
-      additionalImages: []
+      additionalImages: [],
+      featured: true,
+    },
+    {
+      id: 3,
+      title: 'Clothes Branding',
+      description: 'Modern branding for sports clothing',
+      image: '/work/dod.png',
+      fullDescription: 'A comprehensive branding project for a modern sports clothing line. We developed a complete visual identity that resonates with active lifestyle enthusiasts.',
+      additionalImages: [],
+      featured: false,
+    },
+    {
+      id: 4,
+      title: 'Healthcare Branding',
+      description: 'Private healthcare branding',
+      image: '/work/shc.png',
+      fullDescription: 'A sophisticated branding solution for a private healthcare provider, focusing on trust, professionalism, and care.',
+      additionalImages: [],
+      featured: false,
+    },
+    {
+      id: 5,
+      title: 'Clothes Branding',
+      description: 'Modern branding for sports clothing',
+      image: '/work/dod.png',
+      fullDescription: 'A comprehensive branding project for a modern sports clothing line. We developed a complete visual identity that resonates with active lifestyle enthusiasts.',
+      additionalImages: [],
+      featured: true,
+    },
+    {
+      id: 6,
+      title: 'Healthcare Branding',
+      description: 'Private healthcare branding',
+      image: '/work/shc.png',
+      fullDescription: 'A sophisticated branding solution for a private healthcare provider, focusing on trust, professionalism, and care.',
+      additionalImages: [],
+      featured: true,
     }
   ];
