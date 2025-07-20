@@ -15,11 +15,11 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <nav className="fixed h-25 top-0 left-0 right-0 bg-[#CBCBCBFF] backdrop-blur-md z-50 border-b border-gray-100">
+      <div className="max-w-6xl mx-auto px-4 h-25">
+        <div className="flex items-center justify-between h-25 px-5">
           <Link href="/">
-            <Image src="/logo-tsp.png" alt="Bridge Creative" width={75} height={75} />
+            <Image src="/logo-tsp.png" alt="Bridge Creative" width={125} height={125} />
           </Link>
           
           {/* Desktop Menu */}
@@ -30,10 +30,10 @@ export default function Navigation() {
             <Link href="/work" prefetch={true} className={`text-gray-600 hover:text-red-500 ${route === '/work' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>Work</Link>
             <Link href="/contact" prefetch={true} className={`text-gray-600 hover:text-red-500 ${route === '/contact' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>Contact</Link>
             <Link 
-              href="tel:+7597040947" 
+              href="mailto:katy.jebb@gmail.com" 
               className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors"
             >
-              Call Us
+              Email Us
             </Link>
           </div>
 
@@ -80,7 +80,7 @@ export default function Navigation() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden"
+              className="md:hidden bg-[#CBCBCBFF] backdrop-blur-md border-b border-gray-100 p-5"
             >
               <div className="py-4 space-y-4">
                 <Link href="/" className="block text-gray-600 hover:text-black" onClick={toggleMenu}>Home</Link>

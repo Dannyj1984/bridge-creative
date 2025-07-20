@@ -85,9 +85,9 @@ export default function WorkCarousel() {
                           <div className="relative h-100 w-full">
                             <Image
                               src={project.image}
-                            alt={project.title}
-                            fill
-                            style={{ objectFit: 'cover' }}
+                              alt={project.title}
+                              fill
+                              style={{ objectFit: 'cover' }}
                           />
                         </div>
                         <div className="p-6">

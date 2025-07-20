@@ -16,9 +16,9 @@ export default async function WorkDetail({ params }: { params: Promise<{ id: str
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
-          <div className="relative h-[400px] w-full mb-8">
+          <div className={`relative h-[${project.imageHeight ?? 430}px] w-full mb-8`}>
             <Image
-              src={project.image}
+              src={project.mainImage ?? project.image}
               alt={project.title}
               fill
               style={{ objectFit: 'cover' }}
@@ -30,19 +30,29 @@ export default async function WorkDetail({ params }: { params: Promise<{ id: str
             <p className="text-xl text-gray-600 mb-8">{project.fullDescription}</p>
           </div>
 
-          {project.additionalImages && project.additionalImages.length > 0 && (
+          {project.additionalSections && project.additionalSections.length > 0 && (
             <div className="mt-12">
-              <h2 className="text-2xl font-bold mb-6">More Images</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {project.additionalImages.map((image, index) => (
-                  <div key={index} className="relative h-[300px]">
-                    <Image
-                      src={image}
-                      alt={`${project.title} - Image ${index + 1}`}
-                      fill
-                      style={{ objectFit: 'cover' }}
-                      className="rounded-lg"
-                    />
+              <h2 className="text-3xl font-bold mb-6">More Details</h2>
+              <hr className="border-gray-400" />
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mt-8">
+                {project.additionalSections.map((section, index) => (
+                  <div 
+                    key={section.id} 
+                    className={`flex flex-col-reverse ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-6 mb-8`}
+                  >
+                    <div className={`relative h-[${section.imageSize ?? 300}px] w-full md:w-1/2`}>
+                      <Image
+                        src={section.image}
+                        alt={`${project.title} - ${section.title}`}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        className="rounded-lg"
+                      />
+                    </div>
+                    <div className="w-full md:w-1/2 flex flex-col justify-center">
+                      <span className="text-xl font-semibold mb-2">{section.title}</span>
+                      <p className="text-gray-600">{section.description}</p>
+                    </div>
                   </div>
                 ))}
               </div>
