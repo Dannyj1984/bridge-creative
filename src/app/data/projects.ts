@@ -137,7 +137,7 @@ export interface Project {
           id: 1,
           title: 'Netball',
           description: '',
-          image: '/work/aw/road.png',
+          image: '/work/aw/logo.png',
         },
         {
           id: 2,
