@@ -33,6 +33,7 @@ export default function Work() {
                     alt={project.title}
                     fill
                     style={{ objectFit: 'cover' }}
+                    priority={true}
                   />
                 </div>
                 <div className="p-6">

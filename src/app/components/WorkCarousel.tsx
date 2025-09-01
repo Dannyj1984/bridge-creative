@@ -1,132 +1,176 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
-import { projects } from '../data/projects';
-import Link from 'next/link';
-import { useState } from 'react';
-import Work from './Work';
+import { useState, useCallback, useMemo } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { projects } from "../data/projects";
+import "./carousel.css";
+
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  featured: boolean;
+}
 
 export default function WorkCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const featuredProjects = projects.filter((p) => p.featured);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  
+  const featuredProjects = useMemo(() => 
+    projects.filter((project) => project.featured), []
+  );
+  
+  const total = featuredProjects.length;
 
-  const getPosition = (index: number) => {
-    const diff = index - currentIndex;
-    const normalizedDiff = ((diff + featuredProjects.length) % featuredProjects.length);
-    const adjustedDiff = normalizedDiff <= featuredProjects.length / 2 ? normalizedDiff : normalizedDiff - featuredProjects.length;
-    return adjustedDiff;
-  };
+  const handleNavigation = useCallback((direction: 'prev' | 'next') => {
+    if (isTransitioning) return; // Prevent rapid clicks
+    
+    setIsTransitioning(true);
+    setCurrentIndex(prev => 
+      direction === 'next' 
+        ? (prev + 1) % total 
+        : (prev - 1 + total) % total
+    );
+    
+    // Reset transition lock after animation completes
+    setTimeout(() => setIsTransitioning(false), 300);
+  }, [isTransitioning, total]);
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % featuredProjects.length);
-  };
+  const handlePrev = useCallback(() => handleNavigation('prev'), [handleNavigation]);
+  const handleNext = useCallback(() => handleNavigation('next'), [handleNavigation]);
 
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + featuredProjects.length) % featuredProjects.length);
-  };
+  const handleCardClick = useCallback((index: number) => {
+    if (index !== currentIndex && !isTransitioning) {
+      setIsTransitioning(true);
+      setCurrentIndex(index);
+      setTimeout(() => setIsTransitioning(false), 300);
+    }
+  }, [currentIndex, isTransitioning]);
 
   return (
     <section className="py-4 md:py-20 bg-gray-50 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 hidden md:block">
-        <motion.h2 
-          className="text-3xl font-semibold mb-12 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
+        <h2 className="text-3xl font-semibold mb-12 text-center">
           Featured Work
-        </motion.h2>
+        </h2>
+
         <div className="relative h-[500px] flex items-center justify-center">
+          {/* Previous button */}
           <button
             onClick={handlePrev}
-            className="cursor-pointer absolute left-4 z-10 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition-colors"
+            disabled={isTransitioning}
+            className="absolute left-4 z-20 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition-colors disabled:opacity-50"
             aria-label="Previous project"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
-          <div className="relative w-full h-full flex items-center justify-center">
-            <AnimatePresence>
-              {featuredProjects.map((project, index) => {
-                let position = getPosition(index);
-                const isVisible = Math.abs(position) <= 2;
 
+          {/* Carousel container */}
+          <div className="relative w-full h-full flex items-center justify-center perspective-1000">
+            <div 
+              className="carousel-track flex items-center justify-center"
+              style={{
+                transform: `translateX(${-currentIndex * 250}px)`,
+                transition: isTransitioning ? 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
+                willChange: 'transform'
+              }}
+            >
+              {featuredProjects.map((project, index) => {
+                const offset = index - currentIndex;
+                const isCenter = offset === 0;
+                const isVisible = Math.abs(offset) <= 2; // Show center + 2 on each side
+                
                 if (!isVisible) return null;
 
                 return (
-                  <motion.div
+                  <div
                     key={project.id}
-                    className={`absolute w-[300px] h-[400px] cursor-pointer transition-shadow hover:shadow-xl`}
+                    className="carousel-card absolute w-[300px] h-[400px] cursor-pointer"
                     style={{
-                      pointerEvents: 'auto',
+                      transform: `translateX(${offset * 250}px) scale(${isCenter ? 1 : 0.8})`,
+                      opacity: isCenter ? 1 : 0.6,
+                      zIndex: isCenter ? 10 : 5,
+                      transition: isTransitioning ? 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
+                      willChange: 'transform, opacity'
                     }}
-                    initial={{ opacity: 0 }}
-                    animate={{
-                      opacity: 1 - Math.abs(position) * 0.3,
-                      x: `${position * 250}px`,
-                      scale: 1 - Math.abs(position) * 0.2,
-                      zIndex: 10 - Math.abs(position),
-                    }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5, ease: 'easeInOut' }}
-                    onClick={(e) => {
-                      if (position !== 0) {
-                        e.preventDefault();
-                        const stepsToMove = -position;
-                        setCurrentIndex((prev) => (prev + stepsToMove + featuredProjects.length) % featuredProjects.length);
-                      }
-                    }}
+                    onClick={() => handleCardClick(index)}
                   >
-                    {position === 0 ? (
-                      <Link href={`/work/${project.id}`} className="block w-full h-full">
-                        <div className="relative w-full h-full bg-white rounded-lg overflow-hidden shadow-lg">
-                          <div className="relative h-100 w-full">
-                            <Image
-                              src={project.image}
-                              alt={project.title}
-                              fill
-                              style={{ objectFit: 'cover' }}
-                          />
-                        </div>
-                        <div className="p-6">
-                          <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                          <p className="text-gray-600 mb-2">{project.description}</p>
-                        </div>
-                      </div>
-                    </Link>) : <div className="block w-full h-full">
                     <div className="relative w-full h-full bg-white rounded-lg overflow-hidden shadow-lg">
-                          <div className="relative h-100 w-full">
-                            <Image
-                              src={project.image}
-                            alt={project.title}
-                            fill
-                            style={{ objectFit: 'cover' }}
-                          />
-                        </div>
-                        <div className="p-6">
-                          <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                          <p className="text-gray-600 mb-2">{project.description}</p>
-                        </div>
-                      </div></div>}
-                  </motion.div>
+                      <div className="relative h-3/4 w-full">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          style={{ objectFit: "cover" }}
+                          sizes="300px"
+                          loading={Math.abs(offset) <= 1 ? "eager" : "lazy"}
+                          priority={isCenter}
+                        />
+                      </div>
+                      <div className="p-4 h-1/4 flex flex-col justify-center">
+                        <h3 className="text-lg font-semibold mb-1 truncate">{project.title}</h3>
+                        <p className="text-gray-600 text-sm line-clamp-2">{project.description}</p>
+                      </div>
+                      {isCenter && (
+                        <Link 
+                          href={`/work/${project.id}`}
+                          className="absolute inset-0 z-10"
+                          aria-label={`View ${project.title} project`}
+                        />
+                      )}
+                    </div>
+                  </div>
                 );
               })}
-            </AnimatePresence>
+            </div>
           </div>
+
+          {/* Next button */}
           <button
             onClick={handleNext}
-            className="cursor-pointer absolute right-4 z-10 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition-colors"
+            disabled={isTransitioning}
+            className="absolute right-4 z-20 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition-colors disabled:opacity-50"
             aria-label="Next project"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
         </div>
+
+        {/* Dots indicator */}
+        <div className="flex justify-center mt-8 space-x-2">
+          {featuredProjects.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => handleCardClick(index)}
+              disabled={isTransitioning}
+              className={`w-3 h-3 rounded-full transition-colors ${
+                index === currentIndex 
+                  ? 'bg-gray-800' 
+                  : 'bg-gray-300 hover:bg-gray-400'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
-      <Work />
     </section>
   );
 }
