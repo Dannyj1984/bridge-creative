@@ -23,12 +23,12 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-gray-400">
-              <a href="mailto:hello@bridgecreative.co.uk" className="block hover:text-white">hello@bridgecreative.co.uk</a>
-              <a href="tel:+447777777777" className="block hover:text-white">07777777777</a>
+            <Link href="/contact" className="block text-gray-400 hover:text-white">Contact</Link>
+            <h4 className="text-lg font-semibold mb-4 mt-4 text-white">Socials</h4>
               <div className="flex space-x-4 mt-4">
-                <a href="#" className="hover:text-white">LinkedIn</a>
+                <a href="https://www.linkedin.com/company/bridge-creative" className="hover:text-white">LinkedIn</a>
                 <a href="#" className="hover:text-white">Instagram</a>
-                <a href="#" className="hover:text-white">Behance</a>
+                <a href="#" className="hover:text-white">Facebook</a>
               </div>
             </div>
           </div>
