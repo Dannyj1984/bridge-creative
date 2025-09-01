@@ -6,14 +6,6 @@ import Link from "next/link";
 import { projects } from "../data/projects";
 import "./carousel.css";
 
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  featured: boolean;
-}
-
 export default function WorkCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);

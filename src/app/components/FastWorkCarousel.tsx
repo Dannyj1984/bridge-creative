@@ -5,14 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { projects } from "../data/projects";
 
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  featured: boolean;
-}
-
 export default function FastWorkCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -49,7 +41,7 @@ export default function FastWorkCarousel() {
     
     // Reset transition lock after animation completes
     setTimeout(() => setIsTransitioning(false), 150); // Reduced from 300ms
-  }, [isTransitioning, total, currentIndex]);
+  }, [isTransitioning, total]);
 
   const handlePrev = useCallback(() => handleNavigation('prev'), [handleNavigation]);
   const handleNext = useCallback(() => handleNavigation('next'), [handleNavigation]);
