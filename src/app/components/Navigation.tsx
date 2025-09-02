@@ -40,10 +40,10 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <div className="flex items-center space-x-4 md:hidden">
             <Link 
-              href="tel:+7597040947" 
+              href="mailto:katy.jebb@gmail.com" 
               className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors text-sm"
             >
-              Call
+              Email
             </Link>
             <button 
               className="p-2"

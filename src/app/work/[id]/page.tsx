@@ -40,7 +40,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ id: str
                     key={section.id} 
                     className={`flex flex-col-reverse ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-6 mb-8`}
                   >
-                    <div className={`relative h-[${section.imageSize ?? 300}px] w-full md:w-1/2`}>
+                    <div className={`relative ${section.imageSize ? `h-96` : 'h-72'} w-full md:w-1/2`}>
                       <Image
                         src={section.image}
                         alt={`${project.title} - ${section.title}`}
