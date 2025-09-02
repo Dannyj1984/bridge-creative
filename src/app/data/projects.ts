@@ -45,7 +45,7 @@ export interface Project {
           id: 3,
           title: 'Business Cards',
           description: 'A set of custom business cards that represent your brand and make a lasting impression.',
-          image: '/work/sutton/business-card.png'
+          image: '/work/sutton/business-card.webp'
         },
         {
           id: 4,
@@ -57,13 +57,13 @@ export interface Project {
           id: 5,
           title: 'Workwear',
           description: 'Branding rolled out across the business for a an all round professional look.',
-          image: '/work/sutton/workwear.png'
+          image: '/work/sutton/workwear.webp'
         },
         {
           id: 6,
           title: 'Signage',
           description: 'Showcase your business to a wider audience',
-          image: '/work/sutton/wall-sign.png'
+          image: '/work/sutton/wall-sign.webp'
         },
       ],
       featured: true,
@@ -72,15 +72,15 @@ export interface Project {
       id: 2,
       title: 'Community Netball League',
       description: 'Logo design for a community netball league',
-      image: '/work/netball/players-logo.png',
-      mainImage: '/work/netball/players-logo.png',
+      image: '/work/netball/players-logo.webp',
+      mainImage: '/work/netball/players-logo.webp',
       fullDescription: 'A logo design for a community netball league that represents the sport and the community it serves.',
       additionalSections: [
         {
           id: 1,
           title: 'Netball',
           description: '',
-          image: '/work/netball/hoop.png',
+          image: '/work/netball/hoop.webp',
         },
         {
           id: 2,
@@ -92,7 +92,7 @@ export interface Project {
           id: 3,
           title: 'Stationary',
           description: '',
-          image: '/work/netball/tshirt.png'
+          image: '/work/netball/tshirt.webp'
         },
         {
           id: 4,
@@ -104,7 +104,7 @@ export interface Project {
           id: 5,
           title: 'Mockups',
           description: '',
-          image: '/work/netball/mockups.png'
+          image: '/work/netball/mockups.webp'
         },
         {
           id: 6,
@@ -130,26 +130,26 @@ export interface Project {
       description: 'Logistics company Branding',
       imageHeight: 430,
       mainImage: '/work/aw/logo-landscape.png',
-      image: '/work/aw/road.png',
+      image: '/work/aw/logo-mix.webp',
       fullDescription: 'A sophisticated branding solution for a private healthcare provider, focusing on trust, professionalism, and care.',
       additionalSections: [
         {
           id: 1,
-          title: 'Netball',
+          title: 'Vehicle',
           description: '',
           image: '/work/aw/logo.png',
         },
         {
           id: 2,
-          title: 'Clothing Ideas',
+          title: 'Vehicle',
           description: '',
-          image: '/work/aw/truck.png',        
+          image: '/work/aw/truck.webp',        
         },
         {
           id: 3,
           title: 'Stationary',
           description: '',
-          image: '/work/aw/van.png',        
+          image: '/work/aw/van.webp',        
         },
       ],
       featured: true,
