@@ -34,7 +34,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${caveat.variable} font-sans`}>
-        <Toaster position="top-center" />
+        <Toaster position="top-left" />
         {children}
         <Analytics />
       </body>
