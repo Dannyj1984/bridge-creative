@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Caveat} from "next/font/google";
+import { Analytics } from '@vercel/analytics/next';
 import "./globals.css";
 import Script from 'next/script'
 import { Toaster } from 'react-hot-toast';
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${caveat.variable} font-sans`}>
         <Toaster position="top-center" />
         {children}
+        <Analytics />
       </body>
     </html>
   );
