@@ -19,7 +19,7 @@ export default function Navigation() {
       <div className="max-w-6xl mx-auto px-4 h-25">
         <div className="flex items-center justify-between h-25 px-5">
           <Link href="/">
-            <Image src="/logo-tsp.png" alt="Bridge Creative" width={125} height={125} />
+            <Image src="/logo-tsp.png" alt="Bridge Creative" width={125} height={125} priority={true} />
           </Link>
           
           {/* Desktop Menu */}

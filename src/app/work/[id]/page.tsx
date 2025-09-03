@@ -16,13 +16,15 @@ export default async function WorkDetail({ params }: { params: Promise<{ id: str
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
-          <div className={`relative h-[${project.imageHeight ?? 430}px] w-full mb-8`}>
+          <div className={`relative h-${project.imageHeight ? '96' : '72'} w-full mb-8`}>
             <Image
               src={project.mainImage ?? project.image}
               alt={project.title}
               fill
               style={{ objectFit: 'cover' }}
               className="rounded-lg"
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+              priority={project.mainImage ? true : false}
             />
           </div>
           
@@ -47,6 +49,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ id: str
                         fill
                         style={{ objectFit: 'cover' }}
                         className="rounded-lg"
+                        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                       />
                     </div>
                     <div className="w-full md:w-1/2 flex flex-col justify-center">
