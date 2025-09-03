@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { projects } from '../data/projects';
+import Image from 'next/image';
 
 // Design Playground Component
 function DesignPlayground() {
@@ -309,7 +310,7 @@ export default function PalettePage() {
               onClick={() => setSelectedPalette(palette)}
             >
               <div className="h-48 bg-gray-200 relative">
-                <img
+                <Image
                   src={palette.image}
                   alt={palette.title}
                   className="w-full h-full object-cover"
