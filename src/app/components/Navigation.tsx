@@ -28,6 +28,7 @@ export default function Navigation() {
             <Link href="/about" prefetch={true} className={`text-gray-600 hover:text-red-500 ${route === '/about' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>About</Link>
             <Link href="/services" prefetch={true} className={`text-gray-600 hover:text-red-500 ${route === '/services' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>Services</Link>
             <Link href="/work" prefetch={true} className={`text-gray-600 hover:text-red-500 ${route === '/work' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>Work</Link>
+            <Link href="/palette" prefetch={true} className={`text-gray-600 hover:text-red-500 ${route === '/palette' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>Palette</Link>
             <Link href="/contact" prefetch={true} className={`text-gray-600 hover:text-red-500 ${route === '/contact' ? 'text-red-600 scale-130 font-caveat italic' : ''}`}>Contact</Link>
             <Link 
               href="mailto:katy.jebb@gmail.com" 
@@ -87,6 +88,7 @@ export default function Navigation() {
                 <Link href="/about" className="block text-gray-600 hover:text-black" onClick={toggleMenu}>About</Link>
                 <Link href="/services" className="block text-gray-600 hover:text-black" onClick={toggleMenu}>Services</Link>
                 <Link href="/work" className="block text-gray-600 hover:text-black" onClick={toggleMenu}>Work</Link>
+                <Link href="/palette" className="block text-gray-600 hover:text-black" onClick={toggleMenu}>Palette</Link>
                 <Link href="/contact" className="block text-gray-600 hover:text-black" onClick={toggleMenu}>Contact</Link>
               </div>
             </motion.div>
