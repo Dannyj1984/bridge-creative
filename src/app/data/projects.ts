@@ -117,23 +117,14 @@ export interface Project {
       ],
       featured: true,
     },
-    // {
-    //   id: 3,
-    //   title: 'Clothes Branding',
-    //   description: 'Modern branding for sports clothing',
-    //   image: '/work/dod.png',
-    //   fullDescription: 'A comprehensive branding project for a modern sports clothing line. We developed a complete visual identity that resonates with active lifestyle enthusiasts.',
-    //   additionalSections: [],
-    //   featured: false,
-    // },
     {
       id: 4,
       title: 'AW Logistics',
-      description: 'Logistics company Branding',
+      description: 'Complete branding solution for a logistics company, emphasising reliability, speed, and efficiency.',
       imageHeight: 430,
       mainImage: '/work/AW/logo-landscape.png',
       image: '/work/AW/road.webp',
-      fullDescription: 'A sophisticated branding solution for a private healthcare provider, focusing on trust, professionalism, and care.',
+      fullDescription: 'A bespoke branding project for a logistics company, focusing on reliability, speed, and professionalism to support their mission of moving goods efficiently.',
       additionalSections: [
         {
           id: 1,
@@ -149,8 +140,8 @@ export interface Project {
         },
         {
           id: 3,
-          title: 'Options',
-          description: 'From corporate to everyday wear, the AW Logistics brand can be adapted to suit various scenarios.',
+          title: 'Versatile branding',
+          description: 'Showcasing the AW Logistics branding across different use cases, from vehicles to apparel and beyond, illustrating its adaptability for various applications.',
           image: '/work/AW/van.webp',        
         },
         {
