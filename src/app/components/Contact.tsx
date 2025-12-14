@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
-import Loading from '../work/[id]/loading';
+import Loading from '../work/[title]/loading';
 
 declare global {
   interface Window {
@@ -74,30 +74,30 @@ export default function Contact() {
           }
         });
       });
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        ...formData,
-        recaptchaToken: token,
-      }),
-    });
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken: token,
+        }),
+      });
 
-    const responseData = await response.json();
+      const responseData = await response.json();
 
-    if (!response.ok) {
-      setIsSubmitting(false);
-      if (response.status === 429) {
-        throw new Error(responseData.message || 'Too many requests. Please try again later.');
+      if (!response.ok) {
+        setIsSubmitting(false);
+        if (response.status === 429) {
+          throw new Error(responseData.message || 'Too many requests. Please try again later.');
+        }
+        throw new Error(
+          responseData.details
+            ? `Verification failed: ${responseData.details.join(', ')}`
+            : responseData.error || 'Failed to send message'
+        );
       }
-      throw new Error(
-        responseData.details 
-          ? `Verification failed: ${responseData.details.join(', ')}` 
-          : responseData.error || 'Failed to send message'
-      );
-    }
     } catch (error) {
       console.error('Error sending message:', error);
       toast.error('Failed to send message', { duration: 5000, position: 'top-center' });
@@ -107,7 +107,7 @@ export default function Contact() {
     toast.success('Message sent successfully!', { duration: 5000, position: 'top-center' });
     setIsSubmitting(false);
   }
-  
+
   const getErrorsMessage = (name: string) => {
     if (name === 'name') return 'Name is required';
     if (name === 'email' || name === 'phone') return 'Email or phone is required';
@@ -121,7 +121,7 @@ export default function Contact() {
     if (name === 'phone' && /[a-zA-Z]/.test(value)) {
       value = '';
       setErrors(prev => ({ ...prev, phone: 'Phone number must contain only digits' }));
-      return; 
+      return;
     }
     if (errors[name as keyof typeof errors]) {
       if (name === 'email' || name === 'phone') {
@@ -143,7 +143,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-20 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">Get in Touch</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center text-gray-600">Get in Touch</h2>
         {isSubmitting && <Loading />}
         {!isSubmitting && <form onSubmit={handleSubmit} className="space-y-6">
           <div>
@@ -203,7 +203,7 @@ export default function Contact() {
             {errors.message && <p className="text-red-500 mt-1">{errors.message}</p>}
           </div>
           <div className="flex items-start gap-2">
-            <div 
+            <div
               className="relative flex items-center justify-center w-5 h-5 mt-0.5 cursor-pointer group"
               onClick={() => {
                 setFormData(prev => ({
@@ -220,7 +220,7 @@ export default function Contact() {
                 id="acceptContact"
                 name="acceptContact"
                 checked={formData.acceptContact}
-                onChange={() => {}}
+                onChange={() => { }}
                 className="sr-only"
               />
               <div className={`
@@ -243,8 +243,8 @@ export default function Contact() {
                 </svg>
               </div>
             </div>
-            <label 
-              htmlFor="acceptContact" 
+            <label
+              htmlFor="acceptContact"
               className="text-sm text-gray-700 cursor-pointer select-none"
             >
               I consent to Bridge Creative contacting me regarding my enquiry

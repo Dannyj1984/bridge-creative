@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, Caveat} from "next/font/google";
-import { Analytics } from '@vercel/analytics/next';
+import { Inter, Caveat } from "next/font/google";
+import AnalyticsConsent from './components/AnalyticsConsent';
 import "./globals.css";
 import Script from 'next/script'
 import { Toaster } from 'react-hot-toast';
@@ -16,9 +16,25 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "Bridge Creative | Graphic Designer",
-  description: "Portfolio of Bridge Creative, a professional graphic design company specialising in brand identity and digital design.",
+  title: "Graphic Designer in Stalybridge | Logo Design & Branding | Bridge Creative",
+  description:
+    "Professional graphic designer in Stalybridge specialising in logo design, branding and digital media for local businesses across Greater Manchester.",
+  keywords: [
+    "graphic designer stalybridge",
+    "logo design stalybridge",
+    "branding designer greater manchester",
+    "digital media design",
+    "brand identity design"
+  ],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
+
 
 export default function RootLayout({
   children,
@@ -36,7 +52,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${caveat.variable} font-sans`}>
         <Toaster position="top-left" />
         {children}
-        <Analytics />
+        <AnalyticsConsent />
       </body>
     </html>
   );

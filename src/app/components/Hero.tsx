@@ -6,59 +6,59 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="min-h-screen pt-16 flex items-center justify-center bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4 py-20 text-center">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gray-50">
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-50 to-transparent"></div>
+
+      <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
+        <h1 className="sr-only">Bridge Creative | Brand Identity & Digital Design</h1>
+
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="w-full max-w-[700px] mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="w-full max-w-[800px] mx-auto mb-12"
         >
-          <div className="relative w-full aspect-[7/4]">
-            <Image 
-              src="/logo-tsp.png" 
-              alt="Bridge Creative" 
+          <div className="relative w-full aspect-[2/1] md:aspect-[5/2]">
+            <Image
+              src="/logo-tsp.png"
+              alt="Bridge Creative Logo"
               fill
-              className="object-contain rounded-lg" 
+              className="object-contain drop-shadow-sm mt-1 lg:mt-8"
               priority
-              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px'
             />
           </div>
         </motion.div>
-        <motion.p 
-          className="text-xl md:text-2xl text-gray-600 mb-8 mt-8"
+
+        <motion.p
+          className="font-display text-4xl md:text-5xl/relaxed text-gray-800 mb-10 max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
+          transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
         >
           Crafting meaningful brand experiences through thoughtful design
         </motion.p>
-        <div className="flex flex-col md:flex-row justify-center gap-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
+
+        <motion.div
+          className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+        >
+          <Link
+            href="/work"
+            className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-neutral-950 px-8 font-medium text-neutral-50 transition-all duration-300 hover:bg-neutral-800 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2 hover:scale-105"
           >
-            <Link
-              href="/work"
-              className="inline-block bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors"
-            >
-              View Our Work
-            </Link>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
+            <span className="relative">View Our Work</span>
+          </Link>
+          <Link
+            href="/services"
+            className="group inline-flex h-12 items-center justify-center rounded-full border-2 border-neutral-200 bg-white px-8 font-medium text-neutral-950 transition-all duration-300 hover:border-neutral-950 hover:bg-neutral-50 hover:scale-105"
           >
-            <Link
-              href="/services"
-              className="inline-block bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors"
-            >
-              Services
-            </Link>
-          </motion.div>
-        </div>
+            <span>Services</span>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
