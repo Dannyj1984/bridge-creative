@@ -12,8 +12,6 @@ export const metadata: Metadata = {
 
 export default async function WorkDetail({ params }: { params: Promise<{ title: string }> }) {
   const resolvedParams = await params;
-  console.log(resolvedParams);
-  console.log(projects.map((p) => p.title));
   const project = projects.find(p => p.title?.toLowerCase() === resolvedParams.title?.toLowerCase());
   const pageTitle = project?.title?.replace(/-/g, ' ');
   if (!project) {
