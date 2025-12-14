@@ -135,7 +135,7 @@ export default function Services() {
           initial={{ opacity: 0 }}
           {...(isHomePage ? { whileInView: { opacity: 1 }, viewport: { once: true } } : { animate: { opacity: 1 } })}
           transition={{ delay: 0.8 }}
-          className="text-center mt-12 text-gray-500 font-medium"
+          className="text-center mt-12 text-gray-600 font-display text-3xl"
         >
           No matter the project, we&apos;re here to bring your ideas to life.
         </motion.p>
