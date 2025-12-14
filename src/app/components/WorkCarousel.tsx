@@ -9,23 +9,23 @@ import "./carousel.css";
 export default function WorkCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  
-  const featuredProjects = useMemo(() => 
+
+  const featuredProjects = useMemo(() =>
     projects.filter((project) => project.featured), []
   );
-  
+
   const total = featuredProjects.length;
 
   const handleNavigation = useCallback((direction: 'prev' | 'next') => {
     if (isTransitioning) return; // Prevent rapid clicks
-    
+
     setIsTransitioning(true);
-    setCurrentIndex(prev => 
-      direction === 'next' 
-        ? (prev + 1) % total 
+    setCurrentIndex(prev =>
+      direction === 'next'
+        ? (prev + 1) % total
         : (prev - 1 + total) % total
     );
-    
+
     // Reset transition lock after animation completes
     setTimeout(() => setIsTransitioning(false), 300);
   }, [isTransitioning, total]);
@@ -69,7 +69,7 @@ export default function WorkCarousel() {
 
           {/* Carousel container */}
           <div className="relative w-full h-full flex items-center justify-center perspective-1000">
-            <div 
+            <div
               className="carousel-track flex items-center justify-center"
               style={{
                 transform: `translateX(${-currentIndex * 250}px)`,
@@ -81,7 +81,7 @@ export default function WorkCarousel() {
                 const offset = index - currentIndex;
                 const isCenter = offset === 0;
                 const isVisible = Math.abs(offset) <= 2; // Show center + 2 on each side
-                
+
                 if (!isVisible) return null;
 
                 return (
@@ -114,7 +114,7 @@ export default function WorkCarousel() {
                         <p className="text-gray-600 text-sm line-clamp-2">{project.description}</p>
                       </div>
                       {isCenter && (
-                        <Link 
+                        <Link
                           href={`/work/${project.id}`}
                           className="absolute inset-0 z-10"
                           aria-label={`View ${project.title} project`}
@@ -153,11 +153,10 @@ export default function WorkCarousel() {
               key={index}
               onClick={() => handleCardClick(index)}
               disabled={isTransitioning}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                index === currentIndex 
-                  ? 'bg-gray-800' 
-                  : 'bg-gray-300 hover:bg-gray-400'
-              }`}
+              className={`w-3 h-3 rounded-full transition-colors ${index === currentIndex
+                ? 'bg-gray-800'
+                : 'bg-gray-300 hover:bg-gray-400'
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

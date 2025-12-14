@@ -8,11 +8,11 @@ import { projects } from "../data/projects";
 export default function FastWorkCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  
-  const featuredProjects = useMemo(() => 
+
+  const featuredProjects = useMemo(() =>
     projects.filter((project) => project.featured), []
   );
-  
+
   const total = featuredProjects.length;
 
   // Get the 3 projects to display in fixed positions
@@ -20,7 +20,7 @@ export default function FastWorkCarousel() {
     const leftIndex = (currentIndex - 1 + total) % total;
     const centerIndex = currentIndex;
     const rightIndex = (currentIndex + 1) % total;
-    
+
     return {
       left: featuredProjects[leftIndex],
       center: featuredProjects[centerIndex],
@@ -30,15 +30,15 @@ export default function FastWorkCarousel() {
 
   const handleNavigation = useCallback((direction: 'prev' | 'next') => {
     if (isTransitioning) return; // Prevent rapid clicks
-    
+
     setIsTransitioning(true);
     setCurrentIndex(prev => {
-      const newIndex = direction === 'next' 
-        ? (prev + 1) % total 
+      const newIndex = direction === 'next'
+        ? (prev + 1) % total
         : (prev - 1 + total) % total;
       return newIndex;
     });
-    
+
     // Reset transition lock after animation completes
     setTimeout(() => setIsTransitioning(false), 150); // Reduced from 300ms
   }, [isTransitioning, total]);
@@ -49,9 +49,9 @@ export default function FastWorkCarousel() {
   const handleCardClick = useCallback((position: 'left' | 'right') => {
     if (!isTransitioning) {
       setIsTransitioning(true);
-      setCurrentIndex(prev => 
-        position === 'right' 
-          ? (prev + 1) % total 
+      setCurrentIndex(prev =>
+        position === 'right'
+          ? (prev + 1) % total
           : (prev - 1 + total) % total
       );
       setTimeout(() => setIsTransitioning(false), 150);
@@ -61,9 +61,13 @@ export default function FastWorkCarousel() {
   const visibleProjects = getVisibleProjects();
 
   return (
-    <section className="py-4 md:py-20 bg-gray-50 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 hidden md:block">
-        <h2 className="text-3xl font-semibold mb-12 text-center">
+    <section className="relative py-12 md:py-24 bg-gray-50 overflow-hidden border-b border-gray-100/50">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-50 to-transparent"></div>
+
+      <div className="relative z-10 max-w-6xl mx-auto px-4 hidden md:block">
+        <h2 className="font-display text-3xl md:text-4xl text-gray-800 mb-12 text-center">
           Featured Work
         </h2>
 
@@ -72,7 +76,7 @@ export default function FastWorkCarousel() {
           <button
             onClick={handlePrev}
             disabled={isTransitioning}
-            className="absolute left-4 z-20 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition-colors disabled:opacity-50"
+            className="absolute left-4 z-20 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition-colors disabled:opacity-50 text-gray-800"
             aria-label="Previous project"
           >
             <svg
@@ -104,7 +108,7 @@ export default function FastWorkCarousel() {
                 <div className="relative h-3/4 w-full">
                   <Image
                     src={visibleProjects.left.image}
-                    alt={visibleProjects.left.title}
+                    alt={visibleProjects.left.title.replace(/-/g, ' ')}
                     fill
                     style={{ objectFit: "cover" }}
                     sizes="300px"
@@ -112,7 +116,7 @@ export default function FastWorkCarousel() {
                   />
                 </div>
                 <div className="p-4 h-1/4 flex flex-col justify-center">
-                  <h3 className="text-lg font-semibold mb-1 truncate">{visibleProjects.left.title}</h3>
+                  <h3 className="text-lg font-semibold mb-1 truncate text-gray-800">{visibleProjects.left.title.replace(/-/g, ' ')}</h3>
                   <p className="text-gray-600 text-sm line-clamp-2">{visibleProjects.left.description}</p>
                 </div>
               </div>
@@ -133,7 +137,7 @@ export default function FastWorkCarousel() {
                 <div className="relative h-3/4 w-full">
                   <Image
                     src={visibleProjects.center.image}
-                    alt={visibleProjects.center.title}
+                    alt={visibleProjects.center.title.replace(/-/g, ' ')}
                     fill
                     style={{ objectFit: "cover" }}
                     sizes="300px"
@@ -142,13 +146,13 @@ export default function FastWorkCarousel() {
                   />
                 </div>
                 <div className="p-4 h-1/4 flex flex-col justify-center">
-                  <h3 className="text-lg font-semibold mb-1 truncate">{visibleProjects.center.title}</h3>
+                  <h3 className="text-lg font-semibold mb-1 truncate text-gray-800">{visibleProjects.center.title.replace(/-/g, ' ')}</h3>
                   <p className="text-gray-600 text-sm line-clamp-2">{visibleProjects.center.description}</p>
                 </div>
-                <Link 
-                  href={`/work/${visibleProjects.center.id}`}
+                <Link
+                  href={`/work/${visibleProjects.center.title}`}
                   className="absolute inset-0 z-10"
-                  aria-label={`View ${visibleProjects.center.title} project`}
+                  aria-label={`View ${visibleProjects.center.title.replace(/-/g, ' ')} project`}
                 />
               </div>
             </div>
@@ -169,7 +173,7 @@ export default function FastWorkCarousel() {
                 <div className="relative h-3/4 w-full">
                   <Image
                     src={visibleProjects.right.image}
-                    alt={visibleProjects.right.title}
+                    alt={visibleProjects.right.title.replace(/-/g, ' ')}
                     fill
                     style={{ objectFit: "cover" }}
                     sizes="300px"
@@ -177,7 +181,7 @@ export default function FastWorkCarousel() {
                   />
                 </div>
                 <div className="p-4 h-1/4 flex flex-col justify-center">
-                  <h3 className="text-lg font-semibold mb-1 truncate">{visibleProjects.right.title}</h3>
+                  <h3 className="text-lg font-semibold mb-1 truncate text-gray-800">{visibleProjects.right.title.replace(/-/g, ' ')}</h3>
                   <p className="text-gray-600 text-sm line-clamp-2">{visibleProjects.right.description}</p>
                 </div>
               </div>
@@ -188,7 +192,7 @@ export default function FastWorkCarousel() {
           <button
             onClick={handleNext}
             disabled={isTransitioning}
-            className="absolute right-4 z-20 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition-colors disabled:opacity-50"
+            className="absolute right-4 z-20 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition-colors disabled:opacity-50 text-gray-800"
             aria-label="Next project"
           >
             <svg
@@ -216,11 +220,10 @@ export default function FastWorkCarousel() {
                 }
               }}
               disabled={isTransitioning}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                index === currentIndex 
-                  ? 'bg-gray-800' 
-                  : 'bg-gray-300 hover:bg-gray-400'
-              }`}
+              className={`w-3 h-3 rounded-full transition-colors ${index === currentIndex
+                ? 'bg-gray-800'
+                : 'bg-gray-300 hover:bg-gray-400'
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
