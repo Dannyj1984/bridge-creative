@@ -38,7 +38,7 @@ export default function DigitalDesignPage() {
                     <div className="prose prose-lg prose-neutral max-w-none">
                         <h2 className="font-display text-3xl text-neutral-800">Consistent Online Presence</h2>
                         <p className="text-neutral-600">
-                            Your digital channels are 24/7 storefronts for your brand. It's crucial that your visual identity remains consistent whether a customer finds you on Instagram, receives your newsletter, or visits your website. We help you translate your brand for the digital space.
+                            Your digital channels are 24/7 storefronts for your brand. It&apos;s crucial that your visual identity remains consistent whether a customer finds you on Instagram, receives your newsletter, or visits your website. We help you translate your brand for the digital space.
                         </p>
 
                         <dl className="space-y-8 my-12 not-prose">
@@ -64,7 +64,7 @@ export default function DigitalDesignPage() {
 
                         <h2 className="font-display text-3xl text-neutral-800">Optimised for Screens</h2>
                         <p className="text-neutral-600">
-                            Digital design isn't just about looking good; it's about performance. We design with screen sizes in mind, ensuring text is legible on mobile devices and images are optimised for fast loading without sacrificing quality.
+                            Digital design isn&apos;t just about looking good; it&apos;s about performance. We design with screen sizes in mind, ensuring text is legible on mobile devices and images are optimised for fast loading without sacrificing quality.
                         </p>
 
                         <div className="mt-16 text-center">
@@ -73,7 +73,7 @@ export default function DigitalDesignPage() {
                                 href="/contact"
                                 className="inline-flex h-12 items-center justify-center rounded-full bg-neutral-950 px-8 font-medium text-white transition-all hover:bg-neutral-800 hover:scale-105"
                             >
-                                Let's Get Digital
+                                Let&apos;s Get Digital
                             </Link>
                         </div>
                     </div>

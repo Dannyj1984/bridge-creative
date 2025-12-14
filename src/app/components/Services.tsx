@@ -7,7 +7,7 @@ import Link from 'next/link';
 const services = [
   {
     title: 'Logo Design',
-    description: 'Your logo is often the first thing people see, so it needs to make a strong impression. We design logos that are memorable, meaningful, and built to last—perfectly tailored to reflect your brand’s personality.',
+    description: 'Your logo is often the first thing people see, so it needs to make a strong impression. We design logos that are memorable, meaningful, and built to last—perfectly tailored to reflect your brand&apos;s personality.',
     link: '/services/logo-design',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -32,7 +32,7 @@ const services = [
   },
   {
     title: 'Print Design',
-    description: `From flyers and posters to brochures and business cards, we design printed materials that grab attention and deliver your message with style. Whether it's for events, marketing, or everyday use, we’ve got you covered.`,
+    description: `From flyers and posters to brochures and business cards, we design printed materials that grab attention and deliver your message with style. Whether it&apos;s for events, marketing, or everyday use, we’ve got you covered.`,
     link: '/services/print-design',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -104,7 +104,7 @@ export default function Services() {
             transition={{ delay: 0.2 }}
             className="text-lg text-gray-600 leading-relaxed"
           >
-            At The Bridge Creative, we offer a range of design services to help your brand stand out and speak clearly—whether you're starting fresh or giving things a much-needed refresh.
+            At The Bridge Creative, we offer a range of design services to help your brand stand out and speak clearly—whether you&apos;re starting fresh or giving things a much-needed refresh.
           </motion.p>
         </div>
 
@@ -137,7 +137,7 @@ export default function Services() {
           transition={{ delay: 0.8 }}
           className="text-center mt-12 text-gray-500 font-medium"
         >
-          No matter the project, we're here to bring your ideas to life.
+          No matter the project, we&apos;re here to bring your ideas to life.
         </motion.p>
       </div>
     </section>

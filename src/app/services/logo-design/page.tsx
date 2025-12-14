@@ -42,7 +42,7 @@ export default function LogoDesignPage() {
                     <div className="prose prose-lg prose-neutral max-w-none">
                         <h2 className="font-display text-3xl text-neutral-800">More Than Just a Pretty Picture</h2>
                         <p className="text-neutral-600">
-                            Your logo is often the very first interaction a potential customer has with your brand. It needs to work hard—communicating your values, your industry, and your professionalism in a split second. At Bridge Creative, we don't just draw shapes; we build identities.
+                            Your logo is often the very first interaction a potential customer has with your brand. It needs to work hard—communicating your values, your industry, and your professionalism in a split second. At Bridge Creative, we don&apos;t just draw shapes; we build identities.
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12 not-prose">

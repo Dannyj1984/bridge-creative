@@ -42,7 +42,7 @@ export default function About() {
                 From logos, flyers and posters to full-on brand identities, we love working with passionate people to create work that looks great and gets results. We believe that good design should build bridges (see what we did there!?) between you and your audience to ensure the best for you and your company.
               </p>
               <p>
-                Whether you’ve got a clear vision or just a rough sketch on a napkin, we’re here to make it happen.
+                Whether you&apos;ve got a clear vision or just a rough sketch on a napkin, we&apos;re here to make it happen.
               </p>
             </div>
 
@@ -51,7 +51,7 @@ export default function About() {
                 href="/contact"
                 className="group inline-flex h-12 items-center justify-center rounded-full bg-neutral-950 px-8 font-medium text-neutral-50 transition-all duration-300 hover:bg-neutral-800 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2 hover:scale-105"
               >
-                Let's Start a Project
+                Let&apos;s Start a Project
               </Link>
             </div>
           </motion.div>

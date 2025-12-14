@@ -38,7 +38,7 @@ export default function PrintDesignPage() {
                     <div className="prose prose-lg prose-neutral max-w-none">
                         <h2 className="font-display text-3xl text-neutral-800">The Power of Print</h2>
                         <p className="text-neutral-600">
-                            There is a unique validity that comes with high-quality print marketing. Whether it’s a heavyweight business card that exudes confidence or a brochure that perfectly explains your services, print is an opportunity to put your brand literally in your customer's hands.
+                            There is a unique validity that comes with high-quality print marketing. Whether it&apos;s a heavyweight business card that exudes confidence or a brochure that perfectly explains your services, print is an opportunity to put your brand literally in your customer&apos;s hands.
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-12 not-prose">
@@ -56,13 +56,13 @@ export default function PrintDesignPage() {
                             </div>
                             <div className="p-6 rounded-xl bg-neutral-50 border border-neutral-100 transition-all hover:shadow-md">
                                 <h3 className="font-display text-xl mb-2 text-neutral-900">Packaging</h3>
-                                <p className="text-neutral-600 text-sm">Unboxing experiences that elevate your product's perceived value.</p>
+                                <p className="text-neutral-600 text-sm">Unboxing experiences that elevate your product&apos;s perceived value.</p>
                             </div>
                         </div>
 
                         <h2 className="font-display text-3xl text-neutral-800">Print Perfection</h2>
                         <p className="text-neutral-600">
-                            Preparing files for print is a technical art. We ensure your colors are set to the correct profiles (CMYK vs Pantone), your resolution is crisp (300dpi+), and your bleeds are correct. We can even advise on paper stocks and finishes like spot UV or foil blocking to give your project that extra "wow" factor.
+                            Preparing files for print is a technical art. We ensure your colors are set to the correct profiles (CMYK vs Pantone), your resolution is crisp (300dpi+), and your bleeds are correct. We can even advise on paper stocks and finishes like spot UV or foil blocking to give your project that extra &quot;wow&quot; factor.
                         </p>
 
                         <div className="mt-16 text-center">
@@ -71,7 +71,7 @@ export default function PrintDesignPage() {
                                 href="/contact"
                                 className="inline-flex h-12 items-center justify-center rounded-full bg-neutral-950 px-8 font-medium text-white transition-all hover:bg-neutral-800 hover:scale-105"
                             >
-                                Let's Talk Print
+                                Let&apos;s Talk Print
                             </Link>
                         </div>
                     </div>

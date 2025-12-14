@@ -26,7 +26,7 @@ export default function BrandingPage() {
                     <div className="mb-12 text-center">
                         <h1 className="font-display text-5xl md:text-6xl text-neutral-900 mb-6">Branding & Identity</h1>
                         <p className="text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-                            Your brand is more than just a logo. It's how you make people feel. We build cohesive identities that tell your story.
+                            Your brand is more than just a logo. It&apos;s how you make people feel. We build cohesive identities that tell your story.
                         </p>
                     </div>
 
@@ -42,7 +42,7 @@ export default function BrandingPage() {
                     <div className="prose prose-lg prose-neutral max-w-none">
                         <h2 className="font-display text-3xl text-neutral-800">What is Branding?</h2>
                         <p className="text-neutral-600">
-                            Branding is the "gut feeling" a person has about your product, service, or company. It's the sum of every interaction they have with you. While we can't control everything, we <em>can</em> control how you look, sound, and present yourself to the world.
+                            Branding is the &quot;gut feeling&quot; a person has about your product, service, or company. It&apos;s the sum of every interaction they have with you. While we can&apos;t control everything, we <em>can</em> control how you look, sound, and present yourself to the world.
                         </p>
 
                         <h3 className="font-display text-2xl text-neutral-800 mt-12 mb-6">Our Branding Package Includes:</h3>
@@ -70,7 +70,7 @@ export default function BrandingPage() {
                         </p>
 
                         <div className="mt-16 text-center">
-                            <h3 className="font-display text-3xl text-neutral-800 mb-6">Let's build your brand</h3>
+                            <h3 className="font-display text-3xl text-neutral-800 mb-6">Let&apos;s build your brand</h3>
                             <Link
                                 href="/contact"
                                 className="inline-flex h-12 items-center justify-center rounded-full bg-neutral-950 px-8 font-medium text-white transition-all hover:bg-neutral-800 hover:scale-105"
