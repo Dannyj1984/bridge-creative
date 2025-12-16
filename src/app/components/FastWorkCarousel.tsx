@@ -63,8 +63,7 @@ export default function FastWorkCarousel() {
   return (
     <section className="relative py-12 md:py-24 bg-gray-50 overflow-hidden border-b border-gray-100/50">
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-50 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-200 to-transparent"></div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 hidden md:block">
         <h2 className="font-display text-3xl md:text-4xl text-gray-800 mb-12 text-center">

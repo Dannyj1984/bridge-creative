@@ -7,8 +7,7 @@ import { motion } from 'framer-motion';
 export default function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gray-50">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-50 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-200 to-transparent"></div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
         <h1 className="sr-only">Bridge Creative | Brand Identity & Digital Design</h1>

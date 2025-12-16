@@ -24,8 +24,7 @@ export default function Work() {
   return (
     <section className="relative py-20 bg-gray-50 overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-50 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-200 to-transparent"></div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4">
         <motion.div

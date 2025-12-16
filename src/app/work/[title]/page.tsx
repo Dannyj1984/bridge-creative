@@ -41,8 +41,7 @@ export default async function WorkDetail({ params }: { params: Promise<{ title: 
     <PageLayout>
       <div className="relative bg-gray-50 min-h-screen py-20 overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-200 to-transparent"></div>
 
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto">

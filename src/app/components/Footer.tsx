@@ -5,8 +5,6 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="relative bg-neutral-950 text-white py-16 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px] opacity-20"></div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">

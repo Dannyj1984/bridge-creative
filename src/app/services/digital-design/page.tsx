@@ -19,7 +19,6 @@ export default function DigitalDesignPage() {
     return (
         <PageLayout>
             <section className="relative py-20 bg-white overflow-hidden">
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]"></div>
 
                 <div className="relative z-10 max-w-4xl mx-auto px-4">
                     <div className="mb-12 text-center">

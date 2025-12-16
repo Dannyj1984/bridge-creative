@@ -88,8 +88,7 @@ export default function Services() {
   return (
     <section id="services" className="relative py-24 bg-gray-50 overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-200 to-transparent"></div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
