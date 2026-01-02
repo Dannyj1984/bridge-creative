@@ -2,6 +2,7 @@
 
 import PageLayout from '../components/PageLayout';
 import About from '../components/About';
+import LocalBusinessSchema from '../components/schema/LocalBusinessSchema';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <PageLayout>
+      <LocalBusinessSchema />
       <About />
     </PageLayout>
   );

@@ -4,9 +4,9 @@ import PageLayout from '../components/PageLayout';
 import Work from '../components/Work';
 
 export const metadata: Metadata = {
-  title: "Example Work | Bridge Creative",
+  title: "Our Portfolio | Bridge Creative",
   description:
-    "Example work from Bridge Creative, showcasing our design services in Stalybridge.",
+    "Explore our portfolio of professional design work including logo design, branding, print design, and digital design. See real examples of how Bridge Creative delivers exceptional creative solutions for businesses in Stalybridge and beyond.",
 };
 
 export default function WorkPage() {

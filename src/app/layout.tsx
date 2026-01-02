@@ -48,6 +48,7 @@ export default function RootLayout({
           src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
           strategy="beforeInteractive"
         />
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
       </head>
       <body className={`${inter.variable} ${caveat.variable} font-sans`}>
         <Toaster position="top-left" />

@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-gray-200 to-transparent"></div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 text-center">
-        <h1 className="sr-only">Bridge Creative | Brand Identity & Digital Design</h1>
+        <h1 className="opacity-0">Bridge Creative | Brand Identity & Digital Design</h1>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

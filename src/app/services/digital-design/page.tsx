@@ -2,6 +2,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import PageLayout from '../../components/PageLayout';
+import ServiceSchema from '../../components/schema/ServiceSchema';
 
 export const metadata: Metadata = {
     title: "Digital Design Services | Social Media & Digital Assets | Bridge Creative",
@@ -18,6 +19,11 @@ export const metadata: Metadata = {
 export default function DigitalDesignPage() {
     return (
         <PageLayout>
+            <ServiceSchema
+                name="Digital Design"
+                description="Engaging digital design services in Stalybridge. From social media graphics to email templates, we help your brand look professional on every screen."
+                url="https://www.bridgecreative.co.uk/services/digital-design"
+            />
             <section className="relative py-20 bg-white overflow-hidden">
 
                 <div className="relative z-10 max-w-4xl mx-auto px-4">

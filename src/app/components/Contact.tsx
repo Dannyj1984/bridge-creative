@@ -31,7 +31,6 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically handle the form submission
     if (!formData.name || (!formData.email && !formData.phone) || !formData.message) {
       setErrors(prev => ({
         ...prev,
@@ -53,7 +52,6 @@ export default function Contact() {
     }
     try {
       setIsSubmitting(true);
-      // Execute reCAPTCHA
       const token = await new Promise<string>((resolve, reject) => {
         if (typeof window === 'undefined' || !window.grecaptcha) {
           reject(new Error('reCAPTCHA not loaded'));

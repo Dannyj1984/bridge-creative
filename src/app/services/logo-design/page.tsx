@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import PageLayout from '../../components/PageLayout';
+import ServiceSchema from '../../components/schema/ServiceSchema';
 
 export const metadata: Metadata = {
     title: "Logo Design in Stalybridge | Professional Brand Identity | Bridge Creative",
@@ -19,6 +20,12 @@ export const metadata: Metadata = {
 export default function LogoDesignPage() {
     return (
         <PageLayout>
+            <ServiceSchema
+                name="Logo Design"
+                description="Professional logo design services in Stalybridge and Greater Manchester. We create memorable, scalable, and meaningful logos that define your brand identity."
+                url="https://www.bridgecreative.co.uk/services/logo-design"
+                image="https://www.bridgecreative.co.uk/work/sutton/logo-landscape.png"
+            />
             <section className="relative py-20 bg-white overflow-hidden">
 
                 <div className="relative z-10 max-w-4xl mx-auto px-4">

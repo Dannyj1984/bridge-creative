@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import PageLayout from '../../components/PageLayout';
 import Image from 'next/image';
+import ServiceSchema from '../../components/schema/ServiceSchema';
 
 export const metadata: Metadata = {
     title: "Branding & Identity | Strategy & Design | Bridge Creative",
@@ -19,6 +20,12 @@ export const metadata: Metadata = {
 export default function BrandingPage() {
     return (
         <PageLayout>
+            <ServiceSchema
+                name="Branding & Identity"
+                description="Strategic branding services in Stalybridge. We define your voice, visuals, and values to build a cohesive brand identity that connects with your ideal customers."
+                url="https://www.bridgecreative.co.uk/services/branding"
+                image="https://www.bridgecreative.co.uk/work/sutton/wall-sign.webp"
+            />
             <section className="relative py-20 bg-white overflow-hidden">
 
                 <div className="relative z-10 max-w-4xl mx-auto px-4">

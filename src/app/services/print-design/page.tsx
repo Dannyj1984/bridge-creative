@@ -2,6 +2,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import PageLayout from '../../components/PageLayout';
+import ServiceSchema from '../../components/schema/ServiceSchema';
 
 export const metadata: Metadata = {
     title: "Print Design Services | Business Cards, Flyers & Brochures | Bridge Creative",
@@ -18,6 +19,11 @@ export const metadata: Metadata = {
 export default function PrintDesignPage() {
     return (
         <PageLayout>
+            <ServiceSchema
+                name="Print Design"
+                description="Expert print design services in Stalybridge. From tactile business cards to eye-catching flyers and brochures, we create print materials that leave a lasting impression."
+                url="https://www.bridgecreative.co.uk/services/print-design"
+            />
             <section className="relative py-20 bg-white overflow-hidden">
 
                 <div className="relative z-10 max-w-4xl mx-auto px-4">
