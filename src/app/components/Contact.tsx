@@ -154,7 +154,7 @@ export default function Contact() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent text-gray-600"
             />
             {errors.name && <p className="text-red-500 mt-1">{errors.name}</p>}
           </div>
@@ -168,7 +168,7 @@ export default function Contact() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent text-gray-600"
             />
             {errors.email && <p className="text-red-500 mt-1">{errors.email}</p>}
           </div>
@@ -182,7 +182,7 @@ export default function Contact() {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent text-gray-600"
             />
             {errors.phone && <p className="text-red-500 mt-1">{errors.phone}</p>}
           </div>
@@ -196,7 +196,7 @@ export default function Contact() {
               value={formData.message}
               onChange={handleChange}
               rows={4}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent text-gray-600"
             />
             {errors.message && <p className="text-red-500 mt-1">{errors.message}</p>}
           </div>
