@@ -74,12 +74,12 @@ export default async function WorkDetail({ params }: { params: Promise<{ title: 
                       key={section.id}
                       className={`flex flex-col-reverse ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 items-center`}
                     >
-                      <div className={`relative h-64 md:h-96 w-full md:w-1/2 shadow-lg rounded-2xl overflow-hidden border border-gray-100`}>
+                      <div className={`relative h-64 md:h-96 w-full md:w-1/2 shadow-lg rounded-2xl overflow-hidden border border-gray-100 bg-white`}>
                         <Image
                           src={section.image}
                           alt={`${project.title} - ${section.title}`}
                           fill
-                          style={{ objectFit: 'cover' }}
+                          style={{ objectFit: section.orientation === 'vertical' ? 'contain' : 'contain' }}
                           sizes='(max-width: 768px) 100vw, 50vw'
                         />
                       </div>

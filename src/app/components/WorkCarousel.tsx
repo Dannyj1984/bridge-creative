@@ -103,7 +103,7 @@ export default function WorkCarousel() {
                           src={project.image}
                           alt={project.title}
                           fill
-                          style={{ objectFit: "cover" }}
+                          style={{ objectFit: "contain" }}
                           sizes="300px"
                           loading={Math.abs(offset) <= 1 ? "eager" : "lazy"}
                           priority={isCenter}

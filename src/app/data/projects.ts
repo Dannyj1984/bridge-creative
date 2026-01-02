@@ -16,6 +16,7 @@ export interface ProjectDetail {
   description: string;
   image: string;
   imageSize?: number;
+  orientation?: 'vertical' | 'horizontal';
 }
 
 export const projects: Project[] = [
@@ -118,7 +119,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 4,
+    id: 3,
     title: 'AW-Logistics',
     description: 'Complete branding solution for a logistics company, emphasising reliability, speed, and efficiency.',
     imageHeight: 430,
@@ -151,6 +152,50 @@ export const projects: Project[] = [
         image: '/work/AW/logo-mix.webp',
         imageSize: 800
       },
+    ],
+    featured: true,
+  },
+  {
+    id: 4,
+    title: 'Cheshire-Bowel-Clinic',
+    description: 'Branding and digital imaging for the newly formed Cheshire Bowel Clinic.',
+    imageHeight: 430,
+    mainImage: '/work/cbc/reception.webp',
+    image: '/work/cbc/reception.webp',
+    fullDescription: 'A bespoke branding project for a bowel clinic, focusing on a modern and professional look.',
+    additionalSections: [
+      {
+        id: 1,
+        title: 'Logo',
+        description: 'The logo for the Cheshire Bowel Clinic.',
+        image: '/work/cbc/cbc-logo.webp',
+        orientation: 'vertical'
+      },
+      {
+        id: 2,
+        title: 'Logo Detail',
+        description: 'Breakdown of the logo design for the Cheshire Bowel Clinic.',
+        image: '/work/cbc/logo-cbc.png',
+      },
+      {
+        id: 3,
+        title: 'Reception',
+        description: 'The reception area for the Cheshire Bowel Clinic.',
+        image: '/work/cbc/reception.webp',
+      },
+      {
+        id: 4,
+        title: 'Wall Sign',
+        description: 'Wall sign for the Cheshire Bowel Clinic.',
+        image: '/work/cbc/wall-sign.webp',
+      },
+      {
+        id: 5,
+        title: 'Business Cards',
+        description: 'Business cards for the Cheshire Bowel Clinic.',
+        image: '/work/cbc/bcard.webp',
+      },
+
     ],
     featured: true,
   },
