@@ -110,7 +110,7 @@ export default function WorkCarousel() {
                         />
                       </div>
                       <div className="p-4 h-1/4 flex flex-col justify-center">
-                        <h3 className="text-lg font-semibold mb-1 truncate">{project.title}</h3>
+                        <h3 className="text-lg font-semibold mb-1 truncate">{project.title.replace(/-/g, ' ')}</h3>
                         <p className="text-gray-600 text-sm line-clamp-2">{project.description}</p>
                       </div>
                       {isCenter && (

@@ -67,7 +67,7 @@ export default function Work() {
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-600 mb-2 group-hover:text-blue-600 transition-colors">{project.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-600 mb-2 group-hover:text-blue-600 transition-colors">{project.title.replace(/-/g, ' ')}</h3>
                   <p className="text-gray-600 text-sm line-clamp-2 leading-relaxed">{project.description}</p>
                 </div>
               </Link>
