@@ -9,9 +9,13 @@ export const metadata: Metadata = {
     description:
         "Expert print design services in Stalybridge. From tactile business cards to eye-catching flyers and brochures, we create print materials that leave a lasting impression.",
     keywords: ["print design stalybridge", "business card design", "brochure design", "flyer design manchester"],
+    alternates: {
+        canonical: "/services/print-design",
+    },
     openGraph: {
         title: "Print Design | Bridge Creative",
         description: "Tangible marketing materials that stand out.",
+        url: "https://www.bridgecreative.co.uk/services/print-design",
         type: "website",
     }
 };

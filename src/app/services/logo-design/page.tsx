@@ -10,9 +10,13 @@ export const metadata: Metadata = {
     description:
         "Professional logo design services in Stalybridge and Greater Manchester. We create memorable, scalable, and meaningful logos that define your brand identity.",
     keywords: ["logo design stalybridge", "brand identity", "vector logo design", "business logo design manchester"],
+    alternates: {
+        canonical: "/services/logo-design",
+    },
     openGraph: {
         title: "Logo Design | Bridge Creative",
         description: "Memorable and meaningful logo design for your business.",
+        url: "https://www.bridgecreative.co.uk/services/logo-design",
         type: "website",
     }
 };

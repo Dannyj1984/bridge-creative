@@ -195,21 +195,8 @@ export const projects: Project[] = [
         description: 'Business cards for the Cheshire Bowel Clinic.',
         image: '/work/cbc/bcard.webp',
       },
-
-    ],
-    featured: true,
-  },
-  {
-    id: 5,
-    title: 'Print-Design',
-    description: 'A range of print design projects for various clients.',
-    imageHeight: 430,
-    mainImage: '/work/print/print-header.webp',
-    image: '/work/print/print-header.webp',
-    fullDescription: 'A range of print design projects for various clients.',
-    additionalSections: [
       {
-        id: 1,
+        id: 6,
         title: 'Flyer',
         description: 'Collaborating with the Cheshire Bowel Clinic, we designed a flyer that strikes the perfect balance between clinical professionalism and eye-catching visual appeal. The design features a clean, engaging layout and incorporates a QR code to provide patients with an immediate, seamless connection to clinic services.',
         image: '/work/print/cbc.png',

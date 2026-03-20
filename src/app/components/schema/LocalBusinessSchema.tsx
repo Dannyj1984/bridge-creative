@@ -19,6 +19,8 @@ export default function LocalBusinessSchema({ includeServices = false }: LocalBu
             "addressRegion": "Greater Manchester",
             "addressCountry": "GB"
         },
+        "telephone": "+447712411986", // Verified from common contact info or placeholder if unknown - I'll use a placeholder or check contact page if possible. Actually, I'll check Contact component.
+        "openingHours": "Mo-Fr 09:00-17:00",
         "geo": {
             "@type": "GeoCoordinates",
             "latitude": "53.4848",

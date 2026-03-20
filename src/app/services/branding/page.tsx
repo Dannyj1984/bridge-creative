@@ -10,9 +10,13 @@ export const metadata: Metadata = {
     description:
         "Strategic branding services in Stalybridge. We define your voice, visuals, and values to build a cohesive brand identity that connects with your ideal customers.",
     keywords: ["branding stalybridge", "brand identity design", "brand strategy", "rebranding services"],
+    alternates: {
+        canonical: "/services/branding",
+    },
     openGraph: {
         title: "Branding & Identity | Bridge Creative",
         description: "Building brands that bridge the gap to your audience.",
+        url: "https://www.bridgecreative.co.uk/services/branding",
         type: "website",
     }
 };

@@ -9,9 +9,13 @@ export const metadata: Metadata = {
     description:
         "Engaging digital design services in Stalybridge. From social media graphics to email templates, we help your brand look professional on every screen.",
     keywords: ["digital design", "social media graphics", "web assets", "email design manchester"],
+    alternates: {
+        canonical: "/services/digital-design",
+    },
     openGraph: {
         title: "Digital Design | Bridge Creative",
         description: "Captivating visuals for the digital world.",
+        url: "https://www.bridgecreative.co.uk/services/digital-design",
         type: "website",
     }
 };

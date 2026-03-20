@@ -19,11 +19,28 @@ export async function generateMetadata({ params }: { params: Promise<{ title: st
   return {
     title: `${title} | Bridge Creative`,
     description: project.description,
+    alternates: {
+      canonical: `/work/${resolvedParams.title}`,
+    },
     openGraph: {
       title: `${title} | Bridge Creative`,
       description: project.description,
-      images: [project.mainImage ?? project.image],
+      url: `https://www.bridgecreative.co.uk/work/${resolvedParams.title}`,
+      images: [
+        {
+          url: project.mainImage ?? project.image,
+          width: 1200,
+          height: 630,
+          alt: title,
+        }
+      ],
       type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${title} | Bridge Creative`,
+      description: project.description,
+      images: [project.mainImage ?? project.image],
     }
   };
 }

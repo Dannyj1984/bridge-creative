@@ -16,7 +16,11 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "Graphic Designer in Stalybridge | Logo Design & Branding | Bridge Creative",
+  metadataBase: new URL("https://www.bridgecreative.co.uk"),
+  title: {
+    default: "Graphic Designer in Stalybridge | Logo Design & Branding | Bridge Creative",
+    template: "%s | Bridge Creative",
+  },
   description:
     "Professional graphic designer in Stalybridge specialising in logo design, branding and digital media for local businesses across Greater Manchester.",
   keywords: [
@@ -26,13 +30,56 @@ export const metadata: Metadata = {
     "digital media design",
     "brand identity design"
   ],
+  authors: [{ name: "Bridge Creative" }],
+  creator: "Bridge Creative",
+  publisher: "Bridge Creative",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "/",
+  },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    url: "https://www.bridgecreative.co.uk",
+    siteName: "Bridge Creative",
+    title: "Graphic Designer in Stalybridge | Logo Design & Branding | Bridge Creative",
+    description: "Professional graphic designer in Stalybridge specialising in logo design, branding and digital media for local businesses across Greater Manchester.",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Bridge Creative Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bridge Creative | Graphic Design & Branding Stalybridge",
+    description: "Professional graphic designer in Stalybridge specialising in logo design, branding and digital media.",
+    images: ["/logo.png"],
   },
   icons: {
     icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/logo.png", // Ideally an apple-touch-icon.png
   },
+  manifest: "/manifest.json",
 };
 
 

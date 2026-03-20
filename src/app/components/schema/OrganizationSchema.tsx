@@ -16,9 +16,8 @@ export default function OrganizationSchema() {
             "addressCountry": "GB"
         },
         "sameAs": [
-            // Add social media URLs here when available
-            // "https://www.facebook.com/bridgecreative",
-            // "https://www.instagram.com/bridgecreative"
+            "https://www.instagram.com/the_bridge_creative/",
+            "https://www.linkedin.com/company/bridge-creative"
         ]
     };
 

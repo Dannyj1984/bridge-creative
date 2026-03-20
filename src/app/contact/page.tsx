@@ -5,11 +5,15 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "Contact | Bridge Creative",
   description:
-    "Get in touch with Bridge Creative, your local design studio in Stalybridge. Contact us for logo design, branding, digital design, and print design services. We're here to discuss your project, provide quotes, and bring your creative vision to life.",
+    "Contact Bridge Creative, your local design studio in Stalybridge. Get in touch for logo design, branding, and digital media quotes.",
+  alternates: {
+    canonical: "/contact",
+  },
   openGraph: {
     title: "Contact | Bridge Creative",
     description:
-      "Get in touch with Bridge Creative, your local design studio in Stalybridge. Contact us for logo design, branding, digital design, and print design services. We're here to discuss your project, provide quotes, and bring your creative vision to life.",
+      "Contact Bridge Creative, your local design studio in Stalybridge. Get in touch for logo design, branding, and digital media quotes.",
+    url: "https://www.bridgecreative.co.uk/contact",
     images: [
       {
         url: "/logo.png",

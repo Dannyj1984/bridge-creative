@@ -6,11 +6,15 @@ import Services from '../components/Services';
 export const metadata: Metadata = {
   title: "Graphic Design Services in Stalybridge | Bridge Creative",
   description:
-    "Professional design services in Stalybridge including logo design, branding, digital design, and print design. We help startups and small businesses create memorable brand identities and marketing materials that stand out.",
+    "Professional design services in Stalybridge including logo design, branding, digital and print design. Helping local businesses create memorable identities.",
+  alternates: {
+    canonical: "/services",
+  },
   openGraph: {
     title: "Graphic Design Services in Stalybridge | Bridge Creative",
     description:
-      "Professional design services in Stalybridge including logo design, branding, digital design, and print design. We help startups and small businesses create memorable brand identities and marketing materials that stand out.",
+      "Professional design services in Stalybridge including logo design, branding, digital and print design.",
+    url: "https://www.bridgecreative.co.uk/services",
     images: [
       {
         url: "/logo.png",
